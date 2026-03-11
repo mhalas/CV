@@ -26,7 +26,8 @@ jobs:
 
       - name: Install fontawesome6 using tlmgr
         run: |
-          tlmgr update --self
+          tlmgr init-usertree
+          tlmgr update --all
           tlmgr install fontawesome6
 
       - name: Generate PDF document
