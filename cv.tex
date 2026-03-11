@@ -44,6 +44,12 @@
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
+\AtEndDocument{
+  \vfill
+  \small
+  \footerstyle{I hereby consent to the processing of this CV and the personal data contained within, by anyone who receives this document for the sole purpose of considering my application for employment opportunities, in accordance with Article 6.1(a) of GDPR (EU) 2016/679.}
+}
+
 
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
@@ -66,7 +72,7 @@
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
 \makecvfooter
-  {\today}
+  {}
   {Maciej Hałas~~~·~~~Curriculum Vitae}
   {\thepage}
 
