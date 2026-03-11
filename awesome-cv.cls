@@ -81,7 +81,7 @@
 \defaultfontfeatures{
   Renderer=HarfBuzz,
 }
-\setmainfont{Source Sans 3}[
+\setmainfont{Calibri}[
   UprightFont=*,
   ItalicFont=* Italic,
   BoldFont=* Bold,
@@ -89,7 +89,7 @@
   FontFace={l}{n}{Font=* Light},
   FontFace={l}{it}{Font=* Light Italic},
 ]
-\setsansfont{Source Sans 3}[
+\setsansfont{Calibri}[
   UprightFont=*,
   ItalicFont=* Italic,
   BoldFont=* Bold,
@@ -742,7 +742,8 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
-  \vspace{-2.0mm}
+  % \vspace{-2.0mm}
+  \vspace{2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -819,9 +820,11 @@
 \newenvironment{cvitems}{%
   \vspace{-4.0mm}
   \begin{justify}
-  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \begin{itemize}[leftmargin=2ex, itemsep=1ex, topsep=0pt, parsep=0pt]
+    \setstretch{1.2}
     \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
+    \small
 }{%
   \end{itemize}
   \end{justify}
