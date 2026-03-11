@@ -21,6 +21,7 @@ jobs:
           apt install --yes \
             fonts-roboto \
             fonts-adobe-sourcesans3 \
+            texlive-fonts-extra \
             ;
 
       - name: Generate PDF document
