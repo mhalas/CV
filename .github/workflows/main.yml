@@ -28,4 +28,4 @@ jobs:
         with:
           format: pdf
           filename: cv.tex
-          options: -shell-escape
+          options: -pdflatex=lualatex -shell-escape
