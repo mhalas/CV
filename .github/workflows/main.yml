@@ -24,6 +24,11 @@ jobs:
             texlive-fonts-extra \
             ;
 
+      - name: Install fontawesome6 using tlmgr
+        run: |
+          tlmgr update --self
+          tlmgr install fontawesome6
+
       - name: Generate PDF document
         uses: hspaans/latexmk-action@v2.1.0
         with:
