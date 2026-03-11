@@ -1,4 +1,4 @@
-name: Build LaTeX CV
+name: Compile PDF
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install fonts
         run: |
@@ -21,18 +21,13 @@ jobs:
           apt install --yes \
             fonts-roboto \
             fonts-adobe-sourcesans3 \
-            texlive-fonts-extra \
             ;
 
-      - name: Install fontawesome6 using tlmgr
-        run: |
-          tlmgr init-usertree
-          tlmgr update --all
-          tlmgr install fontawesome6
-
       - name: Generate PDF document
-        uses: hspaans/latexmk-action@v2.1.0
+        run: |
+          lualatex --jobname="EN - MaciejHalas - CV" cv.tex
+
+      - uses: actions/upload-artifact@v6
         with:
-          format: pdf
-          filename: cv.tex
-          options: -pdflatex=lualatex -shell-escape
+          name: EN - MaciejHalas - CV
+          path: ./*.pdf
