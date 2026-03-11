@@ -1,8 +1,7 @@
 name: Compile PDF
 
 on:
-  push:
-    branches: [ "master", "github-actions" ]
+  push: {}
 
   workflow_dispatch:
 
@@ -25,9 +24,9 @@ jobs:
 
       - name: Generate PDF document
         run: |
-          lualatex --jobname="EN - MaciejHalas - CV" cv.tex
+          lualatex --jobname="EN - Maciej Hałas - CV" cv.tex
 
       - uses: actions/upload-artifact@v6
         with:
-          name: EN - MaciejHalas - CV
-          path: ./*.pdf
+          name: CV
+          path: ./EN - Maciej Hałas - CV.pdf
