@@ -1,0 +1,13 @@
+.PHONY: cv
+
+CC = lualatex
+CV_DIR = ./
+CV_SRCS = $(shell find $(CV_DIR) -name '*.tex')
+
+cv: $(foreach x, cv, $x.pdf)
+
+cv.pdf: ./cv.tex $(CV_SRCS)
+	$(CC) -output-directory=$(CV_DIR) $<
+
+clean:
+	rm -rf $(CV_DIR)/*.pdf
